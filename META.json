@@ -1,0 +1,56 @@
+{
+   "abstract" : "Fix -Wcompound-token-split-by-macro warnings on clang 13",
+   "author" : [
+      "Shoichi Kaji <skaji@cpan.org>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Dist::Zilla version 6.024, CPAN::Meta::Converter version 2.150010",
+   "license" : [
+      "perl_5"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : 2
+   },
+   "name" : "Devel-PatchPerl-Plugin-FixCompoundTokenSplitByMacro",
+   "prereqs" : {
+      "configure" : {
+         "requires" : {
+            "Module::Build::Tiny" : "0.034"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Devel::PatchPerl" : "0",
+            "perl" : "5.008001"
+         }
+      }
+   },
+   "provides" : {
+      "Devel::PatchPerl::Plugin::FixCompoundTokenSplitByMacro" : {
+         "file" : "lib/Devel/PatchPerl/Plugin/FixCompoundTokenSplitByMacro.pm",
+         "version" : "0.001"
+      },
+      "Devel::PatchPerl::Plugin::FixCompoundTokenSplitByMacro::Share" : {
+         "file" : "lib/Devel/PatchPerl/Plugin/FixCompoundTokenSplitByMacro/Share.pm"
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "bugtracker" : {
+         "web" : "https://github.com/skaji/Devel-PatchPerl-Plugin-FixCompoundTokenSplitByMacro/issues"
+      },
+      "homepage" : "https://github.com/skaji/Devel-PatchPerl-Plugin-FixCompoundTokenSplitByMacro",
+      "repository" : {
+         "type" : "git",
+         "url" : "https://github.com/skaji/Devel-PatchPerl-Plugin-FixCompoundTokenSplitByMacro.git",
+         "web" : "https://github.com/skaji/Devel-PatchPerl-Plugin-FixCompoundTokenSplitByMacro"
+      }
+   },
+   "version" : "0.001",
+   "x_generated_by_perl" : "v5.34.0",
+   "x_serialization_backend" : "Cpanel::JSON::XS version 4.27",
+   "x_spdx_expression" : "Artistic-1.0-Perl OR GPL-1.0-or-later",
+   "x_static_install" : 1
+}
+

@@ -1,0 +1,16 @@
+#!perl
+use strict;
+use warnings;
+
+use Devel::PatchPerl;
+use Devel::PatchPerl::Plugin::FixCompoundTokenSplitByMacro;
+
+my $source = shift || ".";
+my $version = Devel::PatchPerl::_determine_version($source);
+if ($version) {
+    warn "Auto-guessed '$version'\n";
+} else {
+    die "You didn't provide a perl version and I don't appear to be in a perl source tree\n";
+}
+
+Devel::PatchPerl::Plugin::FixCompoundTokenSplitByMacro->patchperl(version => $version);
