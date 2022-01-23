@@ -11,7 +11,15 @@ use version ();
 sub patchperl {
     my ($class, %argv) = @_;
     my $version = version->parse($argv{version});
-    my $name = $version >= v5.19.5 ? "v5.19.5-newer.patch" : "v5.19.5-older.patch";
+
+    my $name;
+    if ($version >= v5.35.2) {
+        return 1; # OK
+    } elsif ($version >= v5.19.5) {
+        $name = "v5.19.5-newer.patch";
+    } else {
+        $name = "v5.19.5-older.patch";
+    }
     my $patch = Devel::PatchPerl::Plugin::FixCompoundTokenSplitByMacro::Share->file($name);
     Devel::PatchPerl::_patch($patch);
 }
