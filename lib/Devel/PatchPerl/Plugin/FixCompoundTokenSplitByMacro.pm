@@ -17,8 +17,12 @@ sub patchperl {
         return 1; # OK
     } elsif ($version >= v5.19.5) {
         $name = "v5.19.5-newer.patch";
-    } else {
+    } elsif ($version >= v5.8.9) {
         $name = "v5.19.5-older.patch";
+    } elsif ($version >= v5.8.8) {
+        $name = "v5.8.8-newer.patch";
+    } else {
+        $name = "v5.8.8-older.patch";
     }
     my $patch = Devel::PatchPerl::Plugin::FixCompoundTokenSplitByMacro::Share->file($name);
     Devel::PatchPerl::_patch($patch);
