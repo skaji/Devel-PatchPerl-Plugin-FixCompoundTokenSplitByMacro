@@ -15,7 +15,7 @@ Devel::PatchPerl::Plugin::FixCompoundTokenSplitByMacro - Fix -Wcompound-token-sp
 
 # INSTALL
 
-    cpm install -g Devel::PatchPerl::Plugin::FixCompoundTokenSplitByMacro
+    cpm install -g https://github.com/skaji/Devel-PatchPerl-Plugin-FixCompoundTokenSplitByMacro.git
 
 # DESCRIPTION
 
