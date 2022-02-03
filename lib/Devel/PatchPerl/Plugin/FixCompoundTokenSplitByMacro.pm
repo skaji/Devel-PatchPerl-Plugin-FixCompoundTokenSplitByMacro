@@ -16,13 +16,17 @@ sub patchperl {
     if ($version >= v5.35.2) {
         return 1; # OK
     } elsif ($version >= v5.19.5) {
-        $name = "v5.19.5-newer.patch";
-    } elsif ($version >= v5.8.9) {
-        $name = "v5.19.5-older.patch";
-    } elsif ($version >= v5.8.8) {
-        $name = "v5.8.8-newer.patch";
+        $name = "5.patch";
+    } elsif ($version >= v5.19.4) {
+        $name = "4.patch";
+    } elsif ($version >= v5.9.4 || $version == v5.8.9) {
+        $name = "3.patch";
+    } elsif ($version == v5.9.3 || $version == v5.8.8) {
+        $name = "2.patch";
+    } elsif ($version >= v5.8.1) {
+        $name = "1.patch";
     } else {
-        $name = "v5.8.8-older.patch";
+        return 1; # not supported
     }
     my $patch = Devel::PatchPerl::Plugin::FixCompoundTokenSplitByMacro::Share->file($name);
     Devel::PatchPerl::_patch($patch);
@@ -48,7 +52,7 @@ Devel::PatchPerl::Plugin::FixCompoundTokenSplitByMacro - Fix -Wcompound-token-sp
 
 =head1 INSTALL
 
-  cpm install -g Devel::PatchPerl::Plugin::FixCompoundTokenSplitByMacro
+  cpm install -g https://github.com/skaji/Devel-PatchPerl-Plugin-FixCompoundTokenSplitByMacro.git
 
 =head1 DESCRIPTION
 

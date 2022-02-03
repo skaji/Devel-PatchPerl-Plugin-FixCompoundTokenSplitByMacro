@@ -1,8 +1,8 @@
 diff --git perl.h perl.h
-index 89f4c98904..aa8c6ebd0e 100644
+index 1e8e870..2f4249b 100644
 --- perl.h
 +++ perl.h
-@@ -473,19 +473,8 @@ struct op *Perl_op asm(stringify(OP_IN_REGISTER));
+@@ -469,19 +469,8 @@ struct op *Perl_op asm(stringify(OP_IN_REGISTER));
   * Trying to select a version that gives no warnings...
   */
  #if !(defined(STMT_START) && defined(STMT_END))
@@ -11,7 +11,7 @@ index 89f4c98904..aa8c6ebd0e 100644
 -#   define STMT_END	)
 -# else
 -   /* Now which other defined()s do we need here ??? */
--#  if (VOIDFLAGS) && (defined(sun) || defined(__sun__)) && !defined(__GNUC__)
+-#  if (defined(sun) || defined(__sun__)) && !defined(__GNUC__)
 -#   define STMT_START	if (1)
 -#   define STMT_END	else (void)0
 -#  else
